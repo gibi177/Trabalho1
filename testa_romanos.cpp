@@ -29,3 +29,13 @@ TEST_CASE("Romano seguido por um romano maior", "[romanos]") {
     REQUIRE(romano_para_decimal("CDLIV") == 454);
     REQUIRE(romano_para_decimal("CMXLII") == 942);
 }
+
+TEST_CASE("expressoes invalidas", "[romanos]") {
+    REQUIRE(romano_para_decimal("?") == -1);
+    REQUIRE(romano_para_decimal("49") == -1);
+    REQUIRE(romano_para_decimal("") == -1);
+    REQUIRE(romano_para_decimal("XXXX") == -1);
+    REQUIRE(romano_para_decimal("XLC") == -1);
+    REQUIRE(romano_para_decimal("&*&*") == -1);
+    REQUIRE(romano_para_decimal("CMIL") == -1);
+}
