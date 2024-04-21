@@ -12,9 +12,11 @@ TEST_CASE("Numeros romanos - algarismos únicos", "[romanos]") {
     REQUIRE(romano_para_decimal("M") == 1000);
 }
 
-TEST_CASE("Romano seguido por um romano igual", "[romanos]") {
+TEST_CASE("Romano seguido por um romano menor", "[romanos]") {
     REQUIRE(romano_para_decimal("III") == 3);
-    REQUIRE(romano_para_decimal("XX") == 20);
-    REQUIRE(romano_para_decimal("CCC") == 300);
-    REQUIRE(romano_para_decimal("MM") == 2000);
+    REQUIRE(romano_para_decimal("DLXXVIII") == 578);
+    REQUIRE(romano_para_decimal("XI") == 11);
+    REQUIRE(romano_para_decimal("XXIII") == 23);
+    REQUIRE(romano_para_decimal("CCCVII") == 307);
+    REQUIRE(romano_para_decimal("MMCCXXVI") == 2226);
 }
