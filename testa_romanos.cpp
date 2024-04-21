@@ -20,3 +20,12 @@ TEST_CASE("Romano seguido por um romano menor", "[romanos]") {
     REQUIRE(romano_para_decimal("CCCVII") == 307);
     REQUIRE(romano_para_decimal("MMCCXXVI") == 2226);
 }
+
+TEST_CASE("Romano seguido por um romano maior", "[romanos]") {
+    REQUIRE(romano_para_decimal("IV") == 4);
+    REQUIRE(romano_para_decimal("DLXXIX") == 579);
+    REQUIRE(romano_para_decimal("XIX") == 19);
+    REQUIRE(romano_para_decimal("XL") == 40);
+    REQUIRE(romano_para_decimal("CDLIV") == 454);
+    REQUIRE(romano_para_decimal("CMXLII") == 942);
+}

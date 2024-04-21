@@ -10,8 +10,16 @@ int romano_para_decimal(const std::string& romano) {
     };
 
     int result = 0;
-    for (char num : romano) {
-        result += valores[num];
+    int size = romano.size();
+
+    for (int i = 0; i < size; ++i) {                                //++i incrementa a contadora i
+        int value = valores[romano[i]];                             //Ex: XXI, quando i=0, value=10
+        
+        if (i + 1 < size && valores[romano[i + 1]] > value) {       //Se prox char existe e é maior que o anterior
+            result -= value; 
+        } else {
+            result += value;
+        }
     }
 
     return result;
